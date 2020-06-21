@@ -151,10 +151,7 @@ class App {
 			if ($value['expireDate'] instanceof \DateTime) {
 				$expireDate = $value['expireDate']->getTimestamp();
 			}
-			$sameSite = 'Lax';
-			if (isset($value['sameSite'])) {
-				$sameSite = $value['sameSite'];
-			}
+			$sameSite = $value['sameSite'] ?? 'Lax';
 
 			$io->setCookie(
 				$name,
